@@ -1,0 +1,102 @@
+ <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="./"><img src="images/Vortex3.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.php"> <i class="fa fa-home"></i> Inicio</a>
+                        <?php session_start();?>
+                    </li>
+                    <h3 class="menu-title">Menú</h3><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Nueva Venta</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Cliente Zoui</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Embajadoras</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Asociados</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">Equipo Zoui</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Apartado</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Reportes</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-bar-chart"></i><a href="reporte_ventas.php">Reporte de Ventas</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="reporte_productos_sucursal.php">Reporte de producto por sucursal</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="reporte_extracciones.php">Reporte de extracciones</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="ui-badges.html">Reporte de utilidad</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="ui-tabs.html">Reporte de ventas producto/sucursal</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="ui-social-buttons.html">Comisiones</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="ui-cards.html">Reporte por forma de pago</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="ui-cards.html">Reporte de productos vendidos</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="ui-cards.html">Reporte de budget</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="ui-cards.html">Reporte de ticket promedio</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="ui-cards.html">Valor prenda promedio</a></li>
+                            <li><i class="fa fa-bar-chart"></i><a href="ui-cards.html">Reporte de unidades promedio por ticket</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Clientes</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li><i class="fa fa-bar-chart"></i><a href="registrar_cliente.php">Registrar cliente</a></li>
+                                <li><i class="fa fa-bar-chart"></i><a href="ver_clientes.php">Ver clientes</a></li>
+                                <li><i class="fa fa-bar-chart"></i><a href="editar_cliente.php">Editar cliente</a></li>
+                            </ul>
+                        </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
+                        </ul>
+                    </li>
+
+                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
+                        </ul>
+                    </li>
+                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
