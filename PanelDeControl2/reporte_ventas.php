@@ -460,7 +460,7 @@
                         <div class="form-group"><label for="mes" class=" form-control-label">Mes</label><input type="text" name="mes" placeholder="Mes" class="form-control"></div>
                         <div class="form-group"><label for="year" class=" form-control-label">Año</label><input type="text" name="year" placeholder="Año" class="form-control"></div>
                         <div class="form-group"><label for="sucursal" class=" form-control-label">Sucursal</label>
-                        <select class="select" name="sucursal">
+                        <select class="form-control" name="sucursal">
                                         <?php
                                         include("PHP/conexion.php");
 										$sql = "SELECT * FROM sucursal;"; 
@@ -490,7 +490,7 @@
                         <div class="form-group"><label for="mes" class=" form-control-label">Mes</label><input type="text" name="mes" placeholder="Mes" class="form-control"></div>
                         <div class="form-group"><label for="year" class=" form-control-label">Año</label><input type="text" name="year" placeholder="Año" class="form-control"></div>
                         <div class="form-group"><label for="sucursal" class=" form-control-label">Sucursal</label>
-                        <select class="select" name="sucursal">
+                        <select class="form-control" name="sucursal">
                                         <?php
                                         include("PHP/conexion.php");
 										$sql = "SELECT * FROM sucursal;"; 

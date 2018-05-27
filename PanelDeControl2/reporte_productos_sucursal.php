@@ -97,7 +97,7 @@
                       <div class="card-body card-block">
                       <form method="POST" action="PHP/reporte_producto_sucursal.php">
                       <div class="form-group"><label for="sucursal" class=" form-control-label">Sucursal</label>
-                        <select class="select" name="sucursal">
+                        <select class="form-control" name="sucursal">
                             <?php
                             include("PHP/conexion.php");
                             $sql = "SELECT * FROM sucursal;"; 
@@ -124,7 +124,7 @@
                       <div class="card-body card-block">
                       <form method="POST" action="PHP/reporte_producto_sucursal_en_stock.php">
                         <div class="form-group"><label for="sucursal" class=" form-control-label">Sucursal</label>
-                        <select class="select" name="sucursal">
+                        <select class="form-control" name="sucursal">
                                         <?php
 										$sql = "SELECT * FROM sucursal;"; 
 										$res1=mysqli_query($con,$sql);
@@ -151,7 +151,7 @@
                       <div class="card-body card-block">
                       <form method="POST" action="PHP/reporte_producto_sucursal_sin_stock.php">
                         <div class="form-group"><label for="sucursal" class=" form-control-label">Sucursal</label>
-                        <select class="select" name="sucursal">
+                        <select class="form-control" name="sucursal">
                                         <?php
 										$sql = "SELECT * FROM sucursal;"; 
 										$res1=mysqli_query($con,$sql);

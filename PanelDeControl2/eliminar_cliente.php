@@ -35,7 +35,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Editar cliente</h1>
+                        <h1>Baja de cliente</h1>
                     </div>
                 </div>
             </div>
@@ -50,25 +50,7 @@
             </div>
         </div>
 
-        <?php
-        $control=0;
-            if(isset($_POST['registrar'])){
-                include("PHP/conexion.php");
-                $nombre=$_POST['nombre'];
-                $tel=$_POST['telefono'];
-                $correo=$_POST['correo'];
-                $id_c=$_SESSION['llave'];
-
-               
-
-                
-                if( $insertar = mysqli_query($con, "UPDATE clientes SET NOMBRE='$nombre', TELEFONO='$tel', CORREO='$correo' WHERE ID='$id_c'")){
-                    $control=1;
-                }else{
-                    $control=0;
-                }
-            }
-        ?>
+       
 
         <div class="content mt-3">
             <div class="animated fadeIn">
@@ -85,7 +67,7 @@
                           <div id="pay-invoice">
                               <div class="card-body">
                                   <div class="card-title">
-                                      <h3 class="text-center">Registrar cliente</h3>
+                                      <h3 class="text-center">Baja de cliente</h3>
                                   </div>
                                   <hr>
                                   <!---->
@@ -93,7 +75,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="control-label mb-1" name="clientes">
+                                        <select  class="form-control" name="clientes">
                                         <?php
                                             include("PHP/conexion.php");
                                             $res=mysqli_query($con,"SELECT * FROM  clientes");
@@ -110,52 +92,26 @@
                             </div>
                             <!-- /.row -->
                             <div class="col-sm-12 text-center">
-                                <button type="submit" name="obtener" class="btn btn-primary"><i class="fa fa-save"></i> Buscar información</button>
+                                <button type="submit" name="eliminar" class="btn btn-primary"><i class="fa fa-save"></i> Borrar cliente</button>
                             </div>
                         </form>
                         <?php
-                        
+                        $control=0;
                             
                        
-                        if(isset($_POST['obtener'])){
+                        if(isset($_POST['eliminar'])){
                             $id = $_POST['clientes'];
-                            $sql=mysqli_query($con, "SELECT * FROM clientes WHERE ID = '$id'");
-                            $valores = mysqli_fetch_array($sql);
-                            $num_cliente = $valores['ID'];
-                            $_SESSION['llave'] = $num_cliente;
-                            $nombre = $valores['NOMBRE'];
-                            $tel = $valores['TELEFONO'];
-                            $correo = $valores['CORREO'];
+                            if($sql=mysqli_query($con, "DELETE  FROM clientes WHERE ID='$id'")){
+                                $control=1;
+                            }else{
+                                $control=0;
+                            }
+                           
                             
                         
                     }
                     ?>
-							<form method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
-                                      <div class="form-group text-center">
-                                          
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="cc-payment" class="control-label mb-1">Nombre</label>
-                                          <input id="nombre" name="nombre" type="text" class="form-control" aria-required="true" aria-invalid="false" value="<?php echo $nombre ?? "";?>">
-                                      </div>
-                                      <div class="form-group has-success">
-                                          <label for="cc-name" class="control-label mb-1">Teléfono</label>
-                                          <input id="telefono" name="telefono" type="text" class="form-control cc-name valid" data-val="true" value="<?php echo $tel ?? ""; ?>" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
-                                          <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="cc-number" class="control-label mb-1">Correo</label>
-                                          <input id="correo" name="correo" type="tel" class="form-control cc-number identified visa" value="<?php echo $correo ?? "";?>" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
-                                          <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                      </div>
-                                     
-                                      <div>
-                                          <button id="payment-button" type="submit" name="registrar" class="btn btn-lg btn-info btn-block">
-                                              <i class="fa fa-edit"></i>&nbsp;
-                                              <span id="payment-button-amount">Actualizar</span>
-                                          </button>
-                                      </div>
-                                  </form>
+							
                               </div>
                           </div>
 
@@ -169,7 +125,7 @@
                       <div class="card-header"><?php
                       if($control==1){
                           echo '<div class="alert alert-success">
-                          <strong>Cliente actualizado con exito</strong>
+                          <strong>Cliente borrado con exito</strong>
                         </div>';
                       }else{
                           echo'';
