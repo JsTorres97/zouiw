@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -58,7 +59,7 @@
                 mysqli_query($con,"SET NAMES 'utf8'");
                 
 
-                if( $insertar = mysqli_query($con, "INSERT INTO campaña (NOMBRE) VALUES ('$campana')")){
+                if( $insertar = mysqli_query($con, "INSERT INTO Campaña (NOMBRE) VALUES ('$campana')")){
                     $control=1;
                 }else{
                     $control=0;

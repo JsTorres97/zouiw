@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -70,7 +71,7 @@
                     <?php
                     include("PHP/conexion.php");
                     mysqli_query($con,"SET NAMES 'utf8'");
-                    $bclientes = mysqli_query($con, "SELECT * FROM campaña");
+                    $bclientes = mysqli_query($con, "SELECT * FROM Campaña");
                     while($row=mysqli_fetch_array($bclientes)){
                         echo '
                         <tr>

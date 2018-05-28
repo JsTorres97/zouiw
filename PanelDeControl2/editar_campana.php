@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -60,7 +61,7 @@
                 mysqli_query($con,"SET NAMES 'utf8'");
 
                 
-                if( $insertar = mysqli_query($con, "UPDATE campaña SET NOMBRE='$nombre' WHERE ID='$id_c'")){
+                if( $insertar = mysqli_query($con, "UPDATE Campaña SET NOMBRE='$nombre' WHERE ID='$id_c'")){
                     $control=1;
                 }else{
                     $control=0;
@@ -95,7 +96,7 @@
                                         <?php
                                             include("PHP/conexion.php");
                                             mysqli_query($con,"SET NAMES 'utf8'");
-                                            $res=mysqli_query($con,"SELECT * FROM  campaña");
+                                            $res=mysqli_query($con,"SELECT * FROM  Campaña");
                                             while($row = mysqli_fetch_array($res)){
                                                 echo '<option value="'.$row['ID'].'">'.$row['NOMBRE'].'</option>';
                                                 
@@ -119,7 +120,7 @@
                         if(isset($_POST['obtener'])){
                             $id = $_POST['camp'];
                             mysqli_query($con,"SET NAMES 'utf8'");
-                            $sql=mysqli_query($con, "SELECT * FROM campaña WHERE ID = '$id'");
+                            $sql=mysqli_query($con, "SELECT * FROM Campaña WHERE ID = '$id'");
                             $valores = mysqli_fetch_array($sql);
                             $num_camp = $valores['ID'];
                             $_SESSION['campanas'] = $num_camp;

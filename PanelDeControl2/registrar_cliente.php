@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -61,7 +62,7 @@
                
 
                 
-                if( $insertar = mysqli_query($con, "INSERT INTO clientes (NOMBRE, TELEFONO, CORREO) VALUES ('$nombre', '$tel', '$correo')")){
+                if( $insertar = mysqli_query($con, "INSERT INTO Clientes (NOMBRE, TELEFONO, CORREO) VALUES ('$nombre', '$tel', '$correo')")){
                     $control=1;
                 }else{
                     $control=0;

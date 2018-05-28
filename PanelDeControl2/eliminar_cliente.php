@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -78,7 +80,7 @@
                                         <select  class="form-control" name="clientes">
                                         <?php
                                             include("PHP/conexion.php");
-                                            $res=mysqli_query($con,"SELECT * FROM  clientes");
+                                            $res=mysqli_query($con,"SELECT * FROM  Clientes");
                                             while($row = mysqli_fetch_array($res)){
                                                 echo '<option value="'.$row['ID'].'">'.$row['NOMBRE'].'</option>';
                                                 
@@ -101,7 +103,7 @@
                        
                         if(isset($_POST['eliminar'])){
                             $id = $_POST['clientes'];
-                            if($sql=mysqli_query($con, "DELETE  FROM clientes WHERE ID='$id'")){
+                            if($sql=mysqli_query($con, "DELETE  FROM Clientes WHERE ID='$id'")){
                                 $control=1;
                             }else{
                                 $control=0;

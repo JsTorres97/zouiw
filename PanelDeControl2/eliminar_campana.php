@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -79,7 +81,7 @@
                                         <?php
                                             include("PHP/conexion.php");
                                             mysqli_query($con,"SET NAMES 'utf8'");
-                                            $res=mysqli_query($con,"SELECT * FROM  campaña");
+                                            $res=mysqli_query($con,"SELECT * FROM  Campaña");
                                             while($row = mysqli_fetch_array($res)){
                                                 echo '<option value="'.$row['ID'].'">'.$row['NOMBRE'].'</option>';
                                                 
@@ -103,7 +105,7 @@
                         if(isset($_POST['eliminar'])){
                             $id = $_POST['campana'];
                             mysqli_query($con,"SET NAMES 'utf8'");
-                            if($sql=mysqli_query($con, "DELETE  FROM campaña WHERE ID='$id'")){
+                            if($sql=mysqli_query($con, "DELETE  FROM Campaña WHERE ID='$id'")){
                                 $control=1;
                             }else{
                                 $control=0;

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -62,7 +64,7 @@
                
 
                 
-                if( $insertar = mysqli_query($con, "UPDATE clientes SET NOMBRE='$nombre', TELEFONO='$tel', CORREO='$correo' WHERE ID='$id_c'")){
+                if( $insertar = mysqli_query($con, "UPDATE Clientes SET NOMBRE='$nombre', TELEFONO='$tel', CORREO='$correo' WHERE ID='$id_c'")){
                     $control=1;
                 }else{
                     $control=0;
@@ -96,7 +98,7 @@
                                         <select class="control-label mb-1" name="clientes">
                                         <?php
                                             include("PHP/conexion.php");
-                                            $res=mysqli_query($con,"SELECT * FROM  clientes");
+                                            $res=mysqli_query($con,"SELECT * FROM  Clientes");
                                             while($row = mysqli_fetch_array($res)){
                                                 echo '<option value="'.$row['ID'].'">'.$row['NOMBRE'].'</option>';
                                                 
@@ -119,7 +121,7 @@
                        
                         if(isset($_POST['obtener'])){
                             $id = $_POST['clientes'];
-                            $sql=mysqli_query($con, "SELECT * FROM clientes WHERE ID = '$id'");
+                            $sql=mysqli_query($con, "SELECT * FROM Clientes WHERE ID = '$id'");
                             $valores = mysqli_fetch_array($sql);
                             $num_cliente = $valores['ID'];
                             $_SESSION['llave'] = $num_cliente;
@@ -136,16 +138,16 @@
                                       </div>
                                       <div class="form-group">
                                           <label for="cc-payment" class="control-label mb-1">Nombre</label>
-                                          <input id="nombre" name="nombre" type="text" class="form-control" aria-required="true" aria-invalid="false" value="<?php echo $nombre ?? "";?>">
+                                          <input id="nombre" name="nombre" type="text" class="form-control" aria-required="true" aria-invalid="false" value="<?php echo $nombre;?>">
                                       </div>
                                       <div class="form-group has-success">
                                           <label for="cc-name" class="control-label mb-1">Teléfono</label>
-                                          <input id="telefono" name="telefono" type="text" class="form-control cc-name valid" data-val="true" value="<?php echo $tel ?? ""; ?>" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
+                                          <input id="telefono" name="telefono" type="text" class="form-control cc-name valid" data-val="true" value="<?php echo $tel; ?>" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
                                           <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                                       </div>
                                       <div class="form-group">
                                           <label for="cc-number" class="control-label mb-1">Correo</label>
-                                          <input id="correo" name="correo" type="tel" class="form-control cc-number identified visa" value="<?php echo $correo ?? "";?>" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
+                                          <input id="correo" name="correo" type="tel" class="form-control cc-number identified visa" value="<?php echo $correo;?>" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
                                           <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                       </div>
                                      

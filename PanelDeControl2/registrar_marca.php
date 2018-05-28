@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -64,7 +66,7 @@
                 $markup=$_POST['markup'];
                 $linea=$_POST['linea'];
 
-                if( $insertar = mysqli_query($con, "INSERT INTO marcas (MARCA, CONTACTO, DIRECCION, TELEFONO, CELULAR, CORREO, CUENTA_BANCARIA, MARKUP, LINEA) VALUES ('$marca', '$contacto', '$direccion', '$tel', '$cel', '$correo', '$cuenta', '$markup', '$linea')")){
+                if( $insertar = mysqli_query($con, "INSERT INTO Marcas (MARCA, CONTACTO, DIRECCION, TELEFONO, CELULAR, CORREO, CUENTA_BANCARIA, MARKUP, LINEA) VALUES ('$marca', '$contacto', '$direccion', '$tel', '$cel', '$correo', '$cuenta', '$markup', '$linea')")){
                     $control=1;
                 }else{
                     $control=0;

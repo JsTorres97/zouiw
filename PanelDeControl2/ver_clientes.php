@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -71,7 +72,7 @@
                     <tbody>
                     <?php
                     include("PHP/conexion.php");
-                    $bclientes = mysqli_query($con, "SELECT * FROM clientes");
+                    $bclientes = mysqli_query($con, "SELECT * FROM Clientes");
                     while($row=mysqli_fetch_array($bclientes)){
                         echo '
                         <tr>

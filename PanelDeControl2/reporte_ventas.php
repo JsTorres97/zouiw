@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -91,16 +92,16 @@
 						mysqli_query($con,"SET NAMES 'utf8'");
 						
 						if(isset($_POST['ventadia'])){
-							$dia = $_POST['dia'] ?? "";
+							$dia = $_POST['dia'];
 							$mes = $_POST['mes'];
 							$year = $_POST['year'];
 							$sucursal = $_POST['sucursal'];
-							$qtotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal'");
-							$qftotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Efectivo'");
-							$qdtotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Debito'");
-							$qctotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Crédito'");
-							$qatotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='AMEX'");
-							$q6total = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='6 MSI'");
+							$qtotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal'");
+							$qftotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Efectivo'");
+							$qdtotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Debito'");
+							$qctotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Crédito'");
+							$qatotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='AMEX'");
+							$q6total = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='6 MSI'");
 							//Total
 							if($qtotal == NULL){
 								$total['TOTAL']=0;
@@ -147,12 +148,12 @@
 							$mes = $_POST['mes'];
 							$year = $_POST['year'];
 							$sucursal = $_POST['sucursal'];
-							$qtotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal'");
-							$qftotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Efectivo'");
-							$qdtotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Debito'");
-							$qctotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Crédito'");
-							$qatotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='AMEX'");
-							$q6total = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='6 MSI'");
+							$qtotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal'");
+							$qftotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Efectivo'");
+							$qdtotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Debito'");
+							$qctotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='Crédito'");
+							$qatotal = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='AMEX'");
+							$q6total = mysqli_query($con,"SELECT SUM(TOTAL) AS TOTAL FROM Ventas WHERE MES='$mes' AND AÑO='$year' AND SUCURSAL='$sucursal' AND FORMA_DE_PAGO='6 MSI'");
 							//Total
 							if($qtotal == NULL){
 								$total['TOTAL']=0;
@@ -199,9 +200,9 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
-                                        <td>Día: <?php echo $dia ?? ""; ?></td>
-                                        <td>Mes: <?php echo $mes ?? ""; ?></td>
-                                        <td>Año: <?php echo $year ?? ""; ?></td>
+                                        <td>Día: <?php echo $dia; ?></td>
+                                        <td>Mes: <?php echo $mes; ?></td>
+                                        <td>Año: <?php echo $year; ?></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -217,10 +218,10 @@
                                             
 										
 										if($totale['TOTAL']>0){
-											echo  $totale['TOTAL'] ?? ""; 
+											echo  $totale['TOTAL']; 
 										}else{
 											$totale['TOTAL'] =0;
-											echo  $totale['TOTAL'] ?? ""; 
+											echo  $totale['TOTAL']; 
 										}
 									}
 										
@@ -234,10 +235,10 @@
 										}else{
 
 										if($totald['TOTAL']>0){
-										echo  $totald['TOTAL'] ?? ""; 
+										echo  $totald['TOTAL']; 
 										}else{
 											$totald['TOTAL'] =0;
-											echo  $totald['TOTAL'] ?? ""; 
+											echo  $totald['TOTAL']; 
 										}
 									}
 										?></td>
@@ -250,10 +251,10 @@
 										}else{
 
 										if($totalc['TOTAL']>0){
-										echo  $totalc['TOTAL'] ?? ""; 
+										echo  $totalc['TOTAL']; 
 										}else{
 											$totalc['TOTAL'] =0;
-											echo  $totalc['TOTAL'] ?? ""; 
+											echo  $totalc['TOTAL']; 
 										}
 									}
 										?></td>
@@ -266,10 +267,10 @@
 										}else{
 
 										if($totala['TOTAL']>0){
-										echo  $totala['TOTAL'] ?? ""; 
+										echo  $totala['TOTAL']; 
 										}else{
 											$totala['TOTAL'] =0;
-											echo  $totala['TOTAL'] ?? ""; 
+											echo  $totala['TOTAL']; 
 										}
 									}
 										?></td>
@@ -282,10 +283,10 @@
 										}else{
 
 										if($total6['TOTAL']>0){
-										echo  $total6['TOTAL'] ?? ""; 
+										echo  $total6['TOTAL']; 
 										}else{
 											$total6['TOTAL'] =0;
-											echo  $total6['TOTAL'] ?? ""; 
+											echo  $total6['TOTAL']; 
 										}
 									}
 										?></td>
@@ -298,10 +299,10 @@
 										}else{
 
 										if($total['TOTAL']>0){
-										echo  $total['TOTAL'] ?? ""; 
+										echo  $total['TOTAL']; 
 										}else{
 											$total['TOTAL'] =0;
-											echo  $total['TOTAL'] ?? ""; 
+											echo  $total['TOTAL']; 
 										}
 									}
 										?></td>
@@ -314,19 +315,19 @@
 
                               <div id="exceldia" >
                             <form method="POST" action="PHP/reporte_venta_dia.php">
-                            <input type="hidden" name="sucursal" value="<?php echo $sucursal ?? ""; ?>">
-                            <input type="hidden" name="dia" value="<?php echo $dia ?? "";?>">
-							<input type="hidden" name="mes" value="<?php echo $mes ?? ""; ?>">
-							<input type="hidden" name="year" value="<?php echo $year ?? ""; ?>">
+                            <input type="hidden" name="sucursal" value="<?php echo $sucursal; ?>">
+                            <input type="hidden" name="dia" value="<?php echo $dia;?>">
+							<input type="hidden" name="mes" value="<?php echo $mes; ?>">
+							<input type="hidden" name="year" value="<?php echo $year; ?>">
 							<button type="submit" name="ventadiaexcel" class="btn btn-success"><i class="fa-file-excel-o"> Reporte excel día</i></button>
                             </form>
                             </div><br>
 
                             <div id="excelmes" >
                             <form method="POST" action="PHP/reporte_venta_mes.php">
-							<input type="hidden" name="sucursal" value="<?php echo $sucursal ?? ""; ?>">
-							<input type="hidden" name="mes" value="<?php echo $mes ?? ""; ?>">
-							<input type="hidden" name="year" value="<?php echo $year ?? ""; ?>">
+							<input type="hidden" name="sucursal" value="<?php echo $sucursal; ?>">
+							<input type="hidden" name="mes" value="<?php echo $mes; ?>">
+							<input type="hidden" name="year" value="<?php echo $year; ?>">
 							<button type="submit" name="ventadiaexcel" class="btn btn-success"><i class="fa-file-excel-o"> Reporte excel mes</i></button>
                             </form>
                             </div>
@@ -345,10 +346,10 @@
 							if(isset($_POST['imprimir'])){
 							
 
-								$dia = $_POST['dia'] ?? "";
-								$mes = $_POST['mes'] ?? "";
-								$year = $_POST['year'] ?? "";
-								$suc=$_POST['sucursal'] ?? ""; 
+								$dia = $_POST['dia'];
+								$mes = $_POST['mes'];
+								$year = $_POST['year'];
+								$suc=$_POST['sucursal']; 
 
 								$total = $_POST['total'];
 								$efe = $_POST['efectivo'];
@@ -425,16 +426,16 @@
 								?>
                             
                             <form method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
-							<input type="hidden" name="sucursal" value="<?php echo $sucursal ?? ""; ?>">
-							<input type="hidden" name="dia" value="<?php echo $dia ?? ""; ?>">
-							<input type="hidden" name="mes" value="<?php echo $mes ?? ""; ?>">
-							<input type="hidden" name="year" value="<?php echo $year ?? ""; ?>">
-							<input type="hidden" name="efectivo" value="<?php echo $totale['TOTAL'] ?? "";?>">
-							<input type="hidden" name="amex" value="<?php echo $totala['TOTAL'] ?? "";?>">
-							<input type="hidden" name="credito" value="<?php echo $totalc['TOTAL'] ?? "";?>">
-							<input type="hidden" name="meses" value="<?php echo $total6['TOTAL'] ?? "";?>">
-							<input type="hidden" name="total" value="<?php echo $total['TOTAL'] ?? "";?>">
-							<input type="hidden" name="debito" value="<?php echo $totald['TOTAL'] ?? "";?>">
+							<input type="hidden" name="sucursal" value="<?php echo $sucursal; ?>">
+							<input type="hidden" name="dia" value="<?php echo $dia; ?>">
+							<input type="hidden" name="mes" value="<?php echo $mes; ?>">
+							<input type="hidden" name="year" value="<?php echo $year; ?>">
+							<input type="hidden" name="efectivo" value="<?php echo $totale['TOTAL'];?>">
+							<input type="hidden" name="amex" value="<?php echo $totala['TOTAL'];?>">
+							<input type="hidden" name="credito" value="<?php echo $totalc['TOTAL'];?>">
+							<input type="hidden" name="meses" value="<?php echo $total6['TOTAL'];?>">
+							<input type="hidden" name="total" value="<?php echo $total['TOTAL'];?>">
+							<input type="hidden" name="debito" value="<?php echo $totald['TOTAL'];?>">
 							<div align="center"><button type="submit" name="imprimir" class="btn btn-primary btn-lg btn-block"><i class="fa fa-print">Imprimir</i></button></div>
 							</form>
                             </div>
@@ -463,7 +464,7 @@
                         <select class="form-control" name="sucursal">
                                         <?php
                                         include("PHP/conexion.php");
-										$sql = "SELECT * FROM sucursal;"; 
+										$sql = "SELECT * FROM Sucursal;"; 
 										$res1=mysqli_query($con,$sql);
 										while($row1 = mysqli_fetch_array($res1)){
 										echo '<option value="'.$row1['NOMBRE'].'">'.$row1['NOMBRE'].'</option>'; 
@@ -493,7 +494,7 @@
                         <select class="form-control" name="sucursal">
                                         <?php
                                         include("PHP/conexion.php");
-										$sql = "SELECT * FROM sucursal;"; 
+										$sql = "SELECT * FROM Sucursal;"; 
 										$res1=mysqli_query($con,$sql);
 										while($row1 = mysqli_fetch_array($res1)){
 										echo '<option value="'.$row1['NOMBRE'].'">'.$row1['NOMBRE'].'</option>'; 

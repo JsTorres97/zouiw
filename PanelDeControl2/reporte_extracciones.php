@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -82,7 +83,7 @@
                                   <select class="control-label mb-1" name="sucursal">
                                         <?php
                                         include("PHP/conexion.php");
-										$sql = "SELECT * FROM sucursal;"; 
+										$sql = "SELECT * FROM Sucursal;"; 
 										$res1=mysqli_query($con,$sql);
 										while($row1 = mysqli_fetch_array($res1)){
 										echo '<option value="'.$row1['NOMBRE'].'">'.$row1['NOMBRE'].'</option>'; 
@@ -112,7 +113,7 @@
                         <selectclass="control-label mb-1" name="sucursal">
                             <?php
                             include("PHP/conexion.php");
-                            $sql = "SELECT * FROM sucursal;"; 
+                            $sql = "SELECT * FROM Sucursal;"; 
                             $res1=mysqli_query($con,$sql);
                             while($row1 = mysqli_fetch_array($res1)){
                             echo '<option value="'.$row1['NOMBRE'].'">'.$row1['NOMBRE'].'</option>'; 
@@ -138,7 +139,7 @@
                         <div class="form-group"><label for="sucursal" class=" form-control-label">Sucursal</label>
                         <select class="control-label mb-1" name="sucursal">
                                         <?php
-										$sql = "SELECT * FROM sucursal;"; 
+										$sql = "SELECT * FROM Sucursal;"; 
 										$res1=mysqli_query($con,$sql);
 										while($row1 = mysqli_fetch_array($res1)){
 										echo '<option value="'.$row1['NOMBRE'].'">'.$row1['NOMBRE'].'</option>'; 
@@ -165,7 +166,7 @@
                         <div class="form-group"><label for="sucursal" class=" form-control-label">Sucursal</label>
                         <select class="form-control" name="sucursal">
                                         <?php
-										$sql = "SELECT * FROM sucursal;"; 
+										$sql = "SELECT * FROM Sucursal;"; 
 										$res1=mysqli_query($con,$sql);
 										while($row1 = mysqli_fetch_array($res1)){
 										echo '<option value="'.$row1['NOMBRE'].'">'.$row1['NOMBRE'].'</option>'; 

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -80,7 +81,7 @@
                                         <?php
                                             include("PHP/conexion.php");
                                             mysqli_query($con,"SET NAMES 'utf8'");
-                                            $res=mysqli_query($con,"SELECT * FROM  sucursal");
+                                            $res=mysqli_query($con,"SELECT * FROM  Sucursal");
                                             while($row = mysqli_fetch_array($res)){
                                                 echo '<option value="'.$row['NOMBRE'].'">'.$row['NOMBRE'].'</option>';
                                                 
@@ -110,7 +111,7 @@
                             $sucursal = $_POST['sucursal'];
                             $cod = $_POST['barras'];
                             mysqli_query($con,"SET NAMES 'utf8'");
-                            if($sql=mysqli_query($con, "DELETE  FROM producto WHERE SUCURSAL='$sucursal' AND CODIGO_BARRAS='$cod'")){
+                            if($sql=mysqli_query($con, "DELETE  FROM Producto WHERE SUCURSAL='$sucursal' AND CODIGO_BARRAS='$cod'")){
                                 $control=1;
                             }else{
                                 $control=0;

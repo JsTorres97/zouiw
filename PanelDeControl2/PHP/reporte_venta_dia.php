@@ -22,7 +22,7 @@ echo "Sucursal".$suc;*/
 /******************************************** 
 Write the query, call it, and find the number of fields 
 /********************************************/ 
-$qry =mysqli_query($con,"SELECT * FROM ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$suc'"); 
+$qry =mysqli_query($con,"SELECT * FROM Ventas WHERE DIA='$dia' AND MES='$mes' AND AÑO='$year' AND SUCURSAL='$suc'"); 
 
 $campos = mysqli_num_fields($qry);   
 $i=0;   

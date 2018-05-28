@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -66,7 +67,7 @@
                
 
                 
-                if( $insertar = mysqli_query($con, "UPDATE sucursal SET NOMBRE='$nombre', CALLE='$calle', NUMERO='$numero', MUNICIPIO='$municipio', ESTADO='$estado', CP='$cod_postal', TELEFONO='$tel', CONCEPTO='$tipo_tienda' WHERE ID='$id_t'")){
+                if( $insertar = mysqli_query($con, "UPDATE Sucursal SET NOMBRE='$nombre', CALLE='$calle', NUMERO='$numero', MUNICIPIO='$municipio', ESTADO='$estado', CP='$cod_postal', TELEFONO='$tel', CONCEPTO='$tipo_tienda' WHERE ID='$id_t'")){
                     $control=1;
                 }else{
                     $control=0;
@@ -100,7 +101,7 @@
                                         <select class="control-label mb-1" name="clientes">
                                         <?php
                                             include("PHP/conexion.php");
-                                            $res=mysqli_query($con,"SELECT * FROM  sucursal");
+                                            $res=mysqli_query($con,"SELECT * FROM  Sucursal");
                                             while($row = mysqli_fetch_array($res)){
                                                 echo '<option value="'.$row['ID'].'">'.$row['NOMBRE'].'</option>';
                                                 
@@ -124,7 +125,7 @@
                        
                         if(isset($_POST['obtener'])){
                             $id = $_POST['clientes'];
-                            $sql=mysqli_query($con, "SELECT * FROM sucursal WHERE ID = '$id'");
+                            $sql=mysqli_query($con, "SELECT * FROM Sucursal WHERE ID = '$id'");
                             $valores = mysqli_fetch_array($sql);
                             $num_tienda = $valores['ID'];
                             $_SESSION['tienda'] = $num_tienda;
@@ -147,42 +148,42 @@
                                       </div>
                                       <div class="form-group">
                                           <label for="nombre" class="control-label mb-1">Nombre</label>
-                                          <input id="nombre" name="nombre" type="text" value="<?php echo $nombre ?? "";?>" class="form-control" aria-required="true" aria-invalid="false">
+                                          <input id="nombre" name="nombre" type="text" value="<?php echo $nombre;?>" class="form-control" aria-required="true" aria-invalid="false">
                                       </div>
                                       <div class="form-group has-success">
                                           <label for="calle" class="control-label mb-1">Calle</label>
-                                          <input id="calle" name="calle" type="text" value="<?php echo $calle ?? "";?>" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
+                                          <input id="calle" name="calle" type="text" value="<?php echo $calle;?>" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
                                           <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                                       </div>
                                       <div class="form-group">
                                           <label for="num" class="control-label mb-1">Número #</label>
-                                          <input id="numero" name="numero" type="text" value="<?php echo $numero ?? "";?>" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
+                                          <input id="numero" name="numero" type="text" value="<?php echo $numero;?>" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
                                           <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                       </div>
                                       <div class="form-group">
                                           <label for="municipio" class="control-label mb-1">Municipio</label>
-                                          <input id="municipio" name="municipio" type="text" value="<?php echo $municipio ?? "";?>" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
+                                          <input id="municipio" name="municipio" type="text" value="<?php echo $municipio;?>" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
                                           <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                       </div>
                                       <div class="form-group">
                                           <label for="estado" class="control-label mb-1">Estado</label>
-                                          <input id="estado" name="estado" type="text" value="<?php echo $estado ?? "";?>" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
+                                          <input id="estado" name="estado" type="text" value="<?php echo $estado;?>" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
                                           <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                       </div>
                                       <div class="form-group">
                                           <label for="cod_postal" class="control-label mb-1">Código Postal</label>
-                                          <input id="cod_postal" name="cod_postal" type="text" value="<?php echo $cp ?? "";?>" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
+                                          <input id="cod_postal" name="cod_postal" type="text" value="<?php echo $cp;?>" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
                                           <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                       </div>
                                       <div class="form-group">
                                           <label for="telefono" class="control-label mb-1">Teléfono</label>
-                                          <input id="telefono" name="telefono" type="text" value="<?php echo $tel ?? "";?>" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
+                                          <input id="telefono" name="telefono" type="text" value="<?php echo $tel;?>" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number">
                                           <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                       </div>
                                       <div class="form-group">
                                           <label for="cod_postal" class="control-label mb-1">Tipo de tienda</label>
                                           <select  class="form-control" name="tienda">
-                                            <option value="<?php echo $concepto ?? "";?>" selected><?php echo $concepto ?? "";?></option>
+                                            <option value="<?php echo $concepto?>" selected><?php echo $concepto;?></option>
                                             <option value="Zoui">Zoui</option>
                                             <option value="Zandia">Zandia</option>
                                            </select> 

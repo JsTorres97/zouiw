@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -65,7 +66,7 @@
                
 
                 
-                if( $insertar = mysqli_query($con, "INSERT INTO sucursal (NOMBRE, CALLE, NUMERO, MUNICIPIO, ESTADO, CP, TELEFONO, CONCEPTO) VALUES ('$nombre', '$calle', '$numero', '$municipio', '$estado', '$cod_postal', '$tel', '$tipo_tienda')")){
+                if( $insertar = mysqli_query($con, "INSERT INTO Sucursal (NOMBRE, CALLE, NUMERO, MUNICIPIO, ESTADO, CP, TELEFONO, CONCEPTO) VALUES ('$nombre', '$calle', '$numero', '$municipio', '$estado', '$cod_postal', '$tel', '$tipo_tienda')")){
                     $control=1;
                 }else{
                     $control=0;

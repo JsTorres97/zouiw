@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -77,7 +78,7 @@
                     <tbody>
                     <?php
                     include("PHP/conexion.php");
-                    $bsucursal = mysqli_query($con, "SELECT * FROM marcas");
+                    $bsucursal = mysqli_query($con, "SELECT * FROM Marcas");
                     while($row=mysqli_fetch_array($bsucursal)){
                         echo '
                         <tr>
