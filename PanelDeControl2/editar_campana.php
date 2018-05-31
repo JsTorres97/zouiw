@@ -136,7 +136,7 @@
                                       </div>
                                       <div class="form-group">
                                           <label for="cc-payment" class="control-label mb-1">Campaña</label>
-                                          <input id="campana" name="campana" type="text" class="form-control" aria-required="true" aria-invalid="false" value="<?php echo $nombre ?? "";?>">
+                                          <input id="campana" name="campana" type="text" class="form-control" aria-required="true" aria-invalid="false" value="<?php echo $nombre;?>">
                                       </div>
                                       <div>
                                           <button id="payment-button" type="submit" name="registrar" class="btn btn-lg btn-info btn-block">

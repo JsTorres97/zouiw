@@ -138,7 +138,7 @@
                                          
                                           <form method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
                                         
-                                            <input id="referencia" name="referencia" type="text" value="<?php echo $codigo ?? "";?>" class="form-control" aria-required="true" aria-invalid="false">
+                                            <input id="referencia" name="referencia" type="text" value="<?php echo $codigo;?>" class="form-control" aria-required="true" aria-invalid="false">
                                             <label for="barras" class="control-label mb-1">Sucursal</label>
                                             <select class="form-control" name="sucursal">
                                             <?php
