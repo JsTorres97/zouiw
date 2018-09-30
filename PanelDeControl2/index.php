@@ -61,32 +61,7 @@
             </div>
         </div>
 
-        <div class="content mt-3">
-
-            <div class="col-sm-12">
-            <h2>Hola <?php echo $_SESSION['NOMBRE']; ?></h2><br>
-            <h3>Por favor utiliza el menú lateral para poder acceder a las opciones del sistema.</h3><br>
-            <script>
-var vars;
-var temp_c;
-var temp_f;
-
-$.ajax({
-type: "GET",
-url: "http://api.openweathermap.org/data/2.5/weather?q=MX, PR&APPID={fb2181ab51d2e3f726c6ed7e1f177967}",
-dataType: "json",
-success: function (data) {
-vars = data.main;
-temp_c = vars.temp - 273.15;
-temp_f = 1.8 * (vars.temp - 273.15) + 32;
-},
-error: function (jqXHR, textStatus, errorThrown) {
-alert(errorThrown);
-}
-});
-</script>
-
-            </div>
+        
 
 
                
