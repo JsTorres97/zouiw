@@ -113,7 +113,7 @@
                       <div class="card-header"><?php
                       if($control==1){
                           echo '<div class="alert alert-success">
-                          <strong>Marca registrada con exito</strong>
+                          <strong>Campaña registrada con exito</strong>
                         </div>';
                       }else{
                           echo'';
