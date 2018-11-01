@@ -77,18 +77,70 @@
                 $file_open = fopen($file,"r");
                 while(($csv = fgetcsv($file_open, 1000, ",")) !== false)
                 {
-                $name = $csv[0];
-                $age = $csv[1];
-                $country = $csv[2];
-                mysql_query("INSERT INTO employee VALUES ('$name','$age','country')");
-                }
-                
+                /*$id = $csv[0];*/
+                $marca = $csv[0];
+                $campana = $csv[1];
+                $sucursal = $csv[2];
+                $linea = $csv[3];
+                $codigobarras = $csv[4];
+                $referencia = $csv[5];
+                $producto = $csv[6];
+                $temporada = $csv[7];
+                $color = $csv[8];
+                $talla = $csv[9];
+                $cantidad = $csv[10];
+                $pcz = $csv[11];
+                $pcziva = $csv[12];
+                $ppz = $csv[13];
+                $mayorista = $csv[14];
+                $socios = $csv[15];
+                $empleados = $csv[16];
+                $cod_zoui = $csv[17];
 
-             /*   if( $insertar = mysqli_query($con, "INSERT INTO Campaña (NOMBRE) VALUES ('$campana')")){
+                if( mysqli_query($con, "INSERT INTO producto (MARCA,
+                CAMPAÑA,
+                SUCURSAL,
+                LINEA,
+                CODIGO_BARRAS,
+                REFERENCIA,
+                PRODUCTO,
+                TEMPORADA,
+                COLOR,
+                TALLA,
+                CANTIDAD,
+                PCZ,
+                PCZIVA,
+                PPZ,
+                PRECIO_MAYORISTA,
+                PRECIO_SOCIOS,
+                PRECIO_EMPLEADOS,
+                CODIGO_ZOUI) VALUES (
+                '$marca',
+                '$campana',
+                '$sucursal',
+                '$linea',
+                '$codigobarras',
+                '$referencia',
+                '$producto',
+                '$temporada',
+                '$color',
+                '$talla',
+                '$cantidad',
+                '$pcz',
+                '$pcziva',
+                '$ppz',
+                '$mayorista',
+                '$socios',
+                '$empleados',
+                '$cod_zoui')")){
                     $control=1;
                 }else{
                     $control=0;
-                }*/
+                }
+                }
+                
+
+                
             }
         ?>
 
@@ -111,7 +163,7 @@
                                   </div>
                                   <hr>
                             1-Descargar el <a href="FormatoInventarios/FormatoVortexZoui.xlsx"> formato Vortex Zoui </a><br>
-                            2-Insertar la información en el archivo, únicamente insertar un número en la columna de <strong>ID</strong><br>
+                            2-Insertar la información en el archivo, ignorando la columna de <strong>ID</strong><br>
                             <div class="zoom">
                             <img class="zoom" src="instrucciones/imagenpaso2">
                             </div><br>
@@ -131,8 +183,8 @@
                             <div class="zoom">
                             <img class="zoom" src="instrucciones/imagenpaso9">
                             </div><br>
-                            10-Importar el archivo
-                            
+                            10-Importar el archivo<br>
+                            *Importante, no debe tener ningún símbolo especial (Comillas, apostrofes, acentos, etc.)
 
 							
                               </div>
@@ -163,7 +215,17 @@
                                   </form>
                       </div>
                       
+                      
                     </div>
+                    <div class="card-header"><?php
+                      if($control==1){
+                          echo '<div class="alert alert-success">
+                          <strong>Inventario registrado con exito</strong>
+                        </div>';
+                      }else{
+                          echo'';
+                      }
+                      ?></div>
                   </div>
 
                   
