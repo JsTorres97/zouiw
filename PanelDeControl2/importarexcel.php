@@ -135,7 +135,7 @@
                 '$cod_zoui')")){
                     $control=1;
                 }else{
-                    $control=0;
+                    $control=2;
                 }
                 }
                 
@@ -222,8 +222,10 @@
                           echo '<div class="alert alert-success">
                           <strong>Inventario registrado con exito</strong>
                         </div>';
-                      }else{
-                          echo'';
+                      }else if($control==2){
+                          echo '<div class="alert alert-danger">
+                          <strong>No se pudo cargar</strong>
+                        </div>';
                       }
                       ?></div>
                   </div>
