@@ -126,7 +126,7 @@ Set the automatic downloadn section
 header("Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=utf-8"); 
 header("Content-Disposition: attachment; filename=Reporte.xls"); 
 header("Pragma: no-cache"); 
-header("Expires: 0");  
+header("Expires: 0");
 
 echo $reporte; 
 

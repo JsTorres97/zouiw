@@ -336,7 +336,7 @@
 
                             <br>
 
-                            <?php
+                            <!--<?php
 							require "ticket/ticket/autoload.php"; //Nota: si renombraste la carpeta a algo diferente de "ticket" cambia el nombre en esta línea
 								
 							use Mike42\Escpos\Printer;
@@ -437,7 +437,7 @@
 							<input type="hidden" name="total" value="<?php echo $total['TOTAL'];?>">
 							<input type="hidden" name="debito" value="<?php echo $totald['TOTAL'];?>">
 							<div align="center"><button type="submit" name="imprimir" class="btn btn-primary btn-lg btn-block"><i class="fa fa-print">Imprimir</i></button></div>
-							</form>
+							</form>-->
                             </div>
 
                             </div>
