@@ -165,23 +165,23 @@
                             1-Descargar el <a href="FormatoInventarios/FormatoVortexZoui.xlsx"> formato Vortex Zoui </a><br>
                             2-Insertar la información en el archivo, ignorando la columna de <strong>ID</strong><br>
                             <div class="zoom">
-                            <img class="zoom" src="instrucciones/imagenpaso2">
+                            <img class="zoom" src="instrucciones/imagenpaso2.png">
                             </div><br>
                             3-Eliminar acentos
                             4-Cambiar <strong>Ñ</strong> por <strong>N</strong> (Incluye mayusculas y minusculas)<br>
                             5-Remplazar <strong>, (coma)</strong> por <strong>_ (guion bajo)</strong><br>
                             6-Eliminar todo formato (La única columna que puede tener formato de número es la de código de barras, pero sin decimales)<br>
                             <div class="zoom">
-                            <img class="zoom" src="instrucciones/imagenpaso6">
+                            <img class="zoom" src="instrucciones/imagenpaso6.png">
                             </div><br>
                             7-<strong>Importante, los datos de la columna sucursal deben ser exactamente como encuentra registrada en <a href="ver_sucursales.php"> sucursales </a></strong><br>
                             8-Eliminar los encabezados<br>
                             <div class="zoom">
-                            <img class="zoom" src="instrucciones/imagenpaso8">
+                            <img class="zoom" src="instrucciones/imagenpaso8.png">
                             </div><br>
                             9-Guardar como <strong>Valores separados por comas (.csv)</strong><br>
                             <div class="zoom">
-                            <img class="zoom" src="instrucciones/imagenpaso9">
+                            <img class="zoom" src="instrucciones/imagenpaso9.png">
                             </div><br>
                             10-Importar el archivo<br>
                             *Importante, no debe tener ningún símbolo especial (Comillas, apostrofes, acentos, etc.)
